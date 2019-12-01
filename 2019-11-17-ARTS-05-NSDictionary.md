@@ -15,7 +15,7 @@ ARTS第五周，内容如下包括：算法，[剖析NSDictionary](https://ciech
 [剖析NSDictionary](https://ciechanow.ski/exposing-nsdictionary/)
 在iOS6.0之前，NSDictionary一直是采用CFDictionary的实现（hash table），但是在6.0之后已经发生了改变。
 在实例 NSDictionary 后，真实的类为_NSDictionaryI，（也可能为__NSSingleEntryDictionaryI,只有一个键值对的情况）。其内存布局如下
-![分布图](https://yfeii-blog.oss-cn-hangzhou.aliyuncs.com/weekly-arts/WeChat2b1e9d15eab7e208f26571b4b2042bac.png)
+![pic](https://yfeii-blog.oss-cn-hangzhou.aliyuncs.com/weekly-arts/WeChat2b1e9d15eab7e208f26571b4b2042bac.png)
 ### objectForKey
 伪代码如下
 ```javascript
@@ -50,8 +50,8 @@ ARTS第五周，内容如下包括：算法，[剖析NSDictionary](https://ciech
 }
 ```
 当经过hash 之后得出的index  在ivar 中的索引，通过object_getIndexedIvars 获得ivars。关于查找过程和冲突处理。
-![图解](https://yfeii-blog.oss-cn-hangzhou.aliyuncs.com/weekly-arts/B428FEA3-2556-446A-B4DD-7172550F7988.png)
-![图解](https://yfeii-blog.oss-cn-hangzhou.aliyuncs.com/weekly-arts/3AD66FC0-F50C-407C-868F-DB198E27F490.png)
+![pic](https://yfeii-blog.oss-cn-hangzhou.aliyuncs.com/weekly-arts/B428FEA3-2556-446A-B4DD-7172550F7988.png)
+![pic](https://yfeii-blog.oss-cn-hangzhou.aliyuncs.com/weekly-arts/3AD66FC0-F50C-407C-868F-DB198E27F490.png)
 ## Tip
 巧用 methos swizzling，在接入云信SDK时，选择分别依赖基础功能库和UI库，在实现UI定制时，通过methos swizzling,hook关键方法实现自定义需求（例如 sendMessage 方法实现对消息的扩展），也就是装饰者模式。
 ## Share
